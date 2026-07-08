@@ -25,8 +25,10 @@ export const ProductProvider = ({ children }) => {
       .get(`http://localhost:5000/Carts?userId=${userId}`)
       .then((res) => {
         setUserCart(res.data);
-        setCartId(res.data[0].id);
-        setCartItems(res.data[0].cartItems);
+        if (res.data && res.data.length > 0) {
+          setCartId(res.data[0].id);
+          setCartItems(res.data[0].cartItems);
+        }
       })
       .catch((err) => console.log(err));
   }, []);
@@ -34,8 +36,10 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     axios.get(`http://localhost:5000/Carts?userId=${userId}`).then((res) => {
       setUserCart(res.data);
-      setCartId(res.data[0].id);
-      setCartItems(res.data[0].cartItems);
+      if (res.data && res.data.length > 0) {
+        setCartId(res.data[0].id);
+        setCartItems(res.data[0].cartItems);
+      }
     });
  
     let total = 0;

@@ -67,7 +67,7 @@ const Login = () => {
             type="email"
             name="email"
             className={`form-control ${errors.email ? "is-invalid" : ""}`}
-            {...register("email", { required: true, maxLength: 20 })}
+            {...register("email", { required: true, maxLength: 100 })}
           />
           {errors.email && (
             <span className="invalid-feedback">Email error</span>
@@ -82,7 +82,7 @@ const Login = () => {
             type="password"
             name="password"
             className={`form-control ${errors.password ? "is-invalid" : ""}`}
-            {...register("password", { required: true, maxLength: 20 })}
+            {...register("password", { required: true, maxLength: 50 })}
           />
           {errors.password && (
             <span className="invalid-feedback">Password error</span>
