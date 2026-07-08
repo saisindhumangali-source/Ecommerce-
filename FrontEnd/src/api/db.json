@@ -155,23 +155,11 @@
       "userId": "086f",
       "cartItems": [
         {
-          "productId": "1003",
-          "quantity": 14
-        },
-        {
-          "productId": "1008",
+          "productId": "1004",
           "quantity": 4
         },
         {
-          "productId": "1009",
-          "quantity": 3
-        },
-        {
-          "productId": "10019",
-          "quantity": 3
-        },
-        {
-          "productId": "1004",
+          "productId": "1006",
           "quantity": 1
         }
       ]
@@ -222,5 +210,6 @@
       ],
       "cartId": "e996"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

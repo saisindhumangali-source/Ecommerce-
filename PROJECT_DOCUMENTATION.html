@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce DBMS Project Documentation</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --text: #333;
+            --light-bg: #f9f9f9;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f0f4f8;
+        }
+        .paper {
+            background-color: #fff;
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        /* Title Page */
+        .title-page {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+        }
+        .college-name {
+            font-size: 24px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .project-title {
+            font-size: 36px;
+            color: var(--accent);
+            margin: 40px 0;
+            font-weight: 800;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+        .team-section {
+            display: inline-block;
+            text-align: left;
+            background: var(--light-bg);
+            padding: 30px 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .team-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .team-member {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .roll-number {
+            font-family: monospace;
+            color: var(--accent);
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        /* Content */
+        h1, h2, h3 { color: var(--primary); }
+        h2 {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            color: var(--secondary);
+        }
+        h3 {
+            margin-top: 25px;
+            color: var(--accent);
+        }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        
+        .full-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px auto 40px auto;
+            border-radius: 6px;
+        }
+        .table-responsive { overflow-x: auto; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        th, td { padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: var(--primary); color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+
+        .page-break { page-break-after: always; padding-bottom: 40px; }
+        
+        /* Print Styles */
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .paper { box-shadow: none; padding: 0; border-radius: 0; max-width: 100%; }
+            .page-break { page-break-after: always; margin-bottom: 0; padding-bottom: 0; }
+            h2 { page-break-before: auto; margin-top: 20px; }
+            .full-img { max-height: 800px; object-fit: contain; }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper">
+        
+        <!-- PAGE 1: TITLE PAGE -->
+        <div class="title-page page-break">
+            <div class="college-name">Sreenidhi Institute of Science and Technology</div>
+            <div class="subtitle">Department of Information Technology</div>
+            
+            <h1 class="project-title">E-Commerce Database Management System</h1>
+            <div class="subtitle">A Comprehensive DBMS Academic Project Documentation</div>
+            
+            <div class="team-section">
+                <div class="team-title">Submitted By:</div>
+                <div class="team-member">N. Kavya <span class="roll-number">24311a12a2</span></div>
+                <div class="team-member">A. Smira Reddy <span class="roll-number">24311a12a4</span></div>
+                <div class="team-member">K. Sai Abhigna Reddy <span class="roll-number">24311a1274</span></div>
+                <div class="team-member">P. Akshitha <span class="roll-number">24311a12b0</span></div>
+                <div class="team-member">M. Sai Sindhu <span class="roll-number">24311a12a8</span></div>
+            </div>
+            
+            <div style="margin-top: 100px; color: #7f8c8d;">
+                <strong>Course:</strong> Database Management Systems (DBMS)<br>
+                <strong>Academic Year:</strong> 2026
+            </div>
+        </div>
+
+        <!-- PAGE 2: ABSTRACT & INTRO -->
+        <div class="page-break">
+            <h2>1. Abstract</h2>
+            <p>In the modern era of digital retail, transitioning small and medium sellers from offline models to online platforms is essential for rampant growth. Therefore, as software engineers, our job is to ease the path of this transition for the seller. Amongst many things that an online site requires, the most important is a highly secure and optimized database system.</p>
+            <p>This project addresses this need by designing and developing a robust E-Commerce Database Management System (DBMS). The primary objective is to engineer a highly normalized relational database capable of securely managing complex operations such as inventory tracking, user authentication, shopping carts, and dynamic financial transactions.</p>
+            
+            <h2>2. Introduction</h2>
+            <p>The Prime Objective of our database project is to design a robust E-commerce database by performing critical backend operations such as viewing orders, placing orders, updating the database in real-time, reviewing products, and maintaining strict data consistency across tables.</p>
+            
+            <h3>2.1 Project Requirements</h3>
+            <ul>
+                <li>A Customer can see account details and update them if required.</li>
+                <li>Customer can search for products according to the category.</li>
+                <li>Customer can add wishlist items to the cart and see the total amount.</li>
+                <li>Customer can update the cart whenever required.</li>
+                <li>Customer can choose the mode of payment.</li>
+                <li>Customer can keep track of the order by seeing the order status.</li>
+                <li>Customer can review products which have been purchased.</li>
+                <li>Seller can update the stock of a particular product dynamically.</li>
+                <li>Seller can keep track of total sales and filter by day, month, or year.</li>
+            </ul>
+
+            <h3>2.2 Functional Requirements</h3>
+            <ul>
+                <li>A Customer cannot access the Seller details and vice-versa (Role-based access).</li>
+                <li>There should not be any inconsistency in the data.</li>
+                <li>There should not be any loss of data during transactions.</li>
+            </ul>
+        </div>
+
+        <!-- PAGE 3: ENTITIES & ATTRIBUTES -->
+        <div class="page-break">
+            <h2>3. Entities and their Attributes</h2>
+            <p>The database relies on 9 primary entities, structured to handle all e-commerce flows efficiently.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ENTITIES</th>
+                            <th>ATTRIBUTES</th>
+                            <th>ATTRIBUTE TYPE</th>
+                            <th>ENTITY TYPE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Customer</strong></td>
+                            <td>Customer_Id (PK)<br>Name<br>Email<br>DateOfBirth<br>Phone<br>Age</td>
+                            <td>Simple<br>Composite<br>Simple<br>Simple<br>Multivalued<br>Derived</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Order</strong></td>
+                            <td>OrderId (PK)<br>ShippingDate<br>OrderDate<br>OrderAmount<br>Cart_CartID (FK)</td>
+                            <td>Simple<br>Simple<br>Simple<br>Simple<br>Simple</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OrderItem</strong></td>
+                            <td>Order_OrderId (PK/FK)<br>Product_ProductId (PK/FK)<br>MRP<br>Quantity</td>
+                            <td>Simple<br>Simple<br>Simple<br>Simple</td>
+                            <td>Weak</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product</strong></td>
+                            <td>productId (PK)<br>ProductName<br>sellerId (FK)<br>MRP<br>CategoryID (FK)<br>Stock<br>Brand</td>
+                            <td>Simple<br>Simple<br>Simple<br>Simple<br>Simple<br>Simple<br>Simple</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Review</strong></td>
+                            <td>ReviewId (PK)<br>Description<br>Ratings<br>Product_ProductId (FK)<br>Customer_CustomerID (FK)</td>
+                            <td>Simple<br>Simple<br>Simple<br>Simple<br>Simple</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cart</strong></td>
+                            <td>cartId (PK)<br>Customer_customerId (FK)<br>GrandTotal<br>ItemsTotal</td>
+                            <td>Simple<br>Simple<br>Derived<br>Derived</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Category</strong></td>
+                            <td>CategoryID (PK)<br>CategoryName<br>DESCRIPTION</td>
+                            <td>Simple<br>Simple<br>Simple</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seller</strong></td>
+                            <td>sellerId (PK)<br>Name<br>Phone<br>Total_Sales</td>
+                            <td>Simple<br>Simple<br>Multivalued<br>Derived</td>
+                            <td>Strong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payment</strong></td>
+                            <td>payment_id (PK)<br>Order_OrderId (FK)<br>PaymentMode<br>Customer_CustomerId (FK)<br>PaymentDate</td>
+                            <td>Simple<br>Simple<br>Simple<br>Simple<br>Simple</td>
+                            <td>Strong</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PAGE 4: ENTITIES & RELATIONS -->
+        <div class="page-break">
+            <h2>4. Entities and Relations</h2>
+            <p>The relationships between entities determine how data flows through the application.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ENTITIES</th>
+                            <th>RELATION</th>
+                            <th>CARDINALITY</th>
+                            <th>TYPE OF PARTICIPATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Customer - Address</td>
+                            <td>Stays At</td>
+                            <td>One-To-One</td>
+                            <td>Total - Partial</td>
+                        </tr>
+                        <tr>
+                            <td>Customer - Cart</td>
+                            <td>Shops</td>
+                            <td>One-To-One</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Customer - Order</td>
+                            <td>Places</td>
+                            <td>One-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Customer - Payment</td>
+                            <td>Makes</td>
+                            <td>One-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Customer - Review</td>
+                            <td>Write</td>
+                            <td>One-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Seller - Product</td>
+                            <td>Sells</td>
+                            <td>Many-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Category - Product</td>
+                            <td>Categorizes</td>
+                            <td>One-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Cart - Product</td>
+                            <td>Contains</td>
+                            <td>Many-To-Many</td>
+                            <td>Partial - Partial</td>
+                        </tr>
+                        <tr>
+                            <td>Product - Orderltem</td>
+                            <td>Includes</td>
+                            <td>One-To-Many</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Order - Orderltem</td>
+                            <td>Includes</td>
+                            <td>One-To-One</td>
+                            <td>Partial - Total</td>
+                        </tr>
+                        <tr>
+                            <td>Payment - Order</td>
+                            <td>For</td>
+                            <td>One-To-One</td>
+                            <td>Total - Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PAGE 5: ER DIAGRAM -->
+        <div class="page-break">
+            <h2>5. Entity-Relationship (ER) Diagram</h2>
+            <p>The following diagram illustrates the conceptual data model of our E-Commerce system, showcasing how users, orders, and products interact.</p>
+            <img src="./ER-diagram.jpg" alt="Entity Relationship Diagram" class="full-img" />
+        </div>
+
+        <!-- PAGE 6: RELATIONAL SCHEMA -->
+        <div class="page-break">
+            <h2>6. Relational Database Schema</h2>
+            <p>This diagram represents the logical mapping of entities and their foreign key constraints, demonstrating the strict normalization applied across the database architecture.</p>
+            <img src="./Relational_Schema-Screenshot.jpg" alt="Relational Database Schema" class="full-img" />
+        </div>
+
+        <!-- PAGE 7: BACKEND QUERIES -->
+        <div class="page-break">
+            <h2>7. Backend Implementation & Queries</h2>
+            <p>To ensure absolute data integrity and automate business logic at the database level, advanced SQL features were implemented:</p>
+            
+            <h3>7.1 Stored Procedures</h3>
+            <ul>
+                <li><strong>Customer Details:</strong> Procedure to securely fetch details of a customer.</li>
+                <li><strong>Order History:</strong> Procedure for retrieving a user's entire order history.</li>
+            </ul>
+
+            <h3>7.2 SQL Triggers (Automated Inventory Management)</h3>
+            <ul>
+                <li><strong>Stock Management:</strong> A trigger is designed to update the number of products as soon as a payment is made successfully.</li>
+                <li><strong>Cart Calculation:</strong> A trigger to automatically update the total amount for a user every time they add something to the payment/cart table.</li>
+            </ul>
+
+            <h3>7.3 Complex Analytics Queries</h3>
+            <p>The database is capable of fulfilling complex analytical queries required by sellers and administrators, such as:</p>
+            <ul>
+                <li><strong>Query 1:</strong> Finding products with the highest ratings for a given category.</li>
+                <li><strong>Query 2:</strong> Filtering out products according to their brand and price.</li>
+                <li><strong>Query 4:</strong> Finding the best seller of a particular product.</li>
+                <li><strong>Query 6:</strong> Listing the product whose sale is the highest on a particular day.</li>
+                <li><strong>Query 8:</strong> Listing the customers who bought products from a particular seller the most.</li>
+                <li><strong>Query 9:</strong> Listing all orders whose payment mode is not CoD and are yet to be delivered.</li>
+                <li><strong>Query 10:</strong> Listing all orders of customers whose total amount is greater than 5000.</li>
+                <li><strong>Query 12:</strong> Listing the seller who has the highest stock of a particular product.</li>
+            </ul>
+        </div>
+
+        <!-- PAGE 8: FRONTEND SCREENS -->
+        <div class="page-break">
+            <h2>8. Frontend UI Implementation (React.js)</h2>
+            <p>While the database acts as the source of truth, a decoupled React.js user interface was engineered to prototype the user experience. Following a microservices pattern, the UI operates independently and integrates seamlessly with our data.</p>
+            
+            <h3>8.1 Secure Authentication (Login Page)</h3>
+            <p>A simulated Google Sign-In page was integrated to demonstrate secure user entry workflows.</p>
+            <img src="./FrontEnd/Asset/Login.png" alt="Login Page" class="full-img" />
+        </div>
+
+        <!-- PAGE 9: FRONTEND SCREENS 2 -->
+        <div class="page-break">
+            <h3>8.2 Product Catalog</h3>
+            <p>The catalog dynamically renders items from the database, populated with high-quality product images.</p>
+            <img src="./FrontEnd/Asset/Product.png" alt="Product Catalog" class="full-img" />
+
+            <h3>8.3 Filter & Search Capabilities</h3>
+            <p>Users can query products based on specific categories, price ranges, and string-matching.</p>
+            <img src="./FrontEnd/Asset/filter.png" alt="Filter Page" class="full-img" />
+        </div>
+
+        <!-- PAGE 10: FRONTEND SCREENS 3 -->
+        <div class="page-break">
+            <h3>8.4 Shopping Cart</h3>
+            <p>React hooks manage state for the shopping cart, instantly reflecting price totals and quantities.</p>
+            <img src="./FrontEnd/Asset/Cart.png" alt="Shopping Cart" class="full-img" />
+
+            <h3>8.5 User Dashboard</h3>
+            <p>Customers can view their account status and past orders.</p>
+            <img src="./FrontEnd/Asset/UserDashboard.png" alt="User Dashboard" class="full-img" />
+        </div>
+
+        <!-- PAGE 11: ADMIN & CONCLUSION -->
+        <div>
+            <h3>8.6 Admin Dashboard</h3>
+            <p>Administrators have full CRUD (Create, Read, Update, Delete) access to manage the inventory.</p>
+            <img src="./FrontEnd/Asset/AdminDashboard.png" alt="Admin Dashboard" class="full-img" />
+
+            <h2>9. Conclusion</h2>
+            <p>This project successfully demonstrates the end-to-end design of a scalable E-commerce Database Management System. By strictly enforcing relational integrity up to 3NF, utilizing advanced SQL triggers for automated data consistency, and decoupling the User Interface from the database logic, the architecture mirrors modern enterprise software standards.</p>
+            
+            <p><strong>Future Enhancements:</strong></p>
+            <ul>
+                <li>Migration of the mock frontend JSON API to a live Express.js REST API that directly interfaces with the MariaDB database.</li>
+                <li>Implementation of a live Stripe Payment Gateway integration for real-world checkout scenarios.</li>
+                <li>Deployment to a cloud environment (e.g., AWS or Render) for public access.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

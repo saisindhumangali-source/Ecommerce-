@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce DBMS Project - Presentation Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 5px solid #ffc107;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .qa-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .answer {
+            color: #2c3e50;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .highlight { border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>E-Commerce DBMS Project</h1>
+        <h2 style="text-align: center; margin-top: 0;">Team Presentation & Viva Guide</h2>
+        <p style="text-align: center; color: #7f8c8d; font-style: italic;">This document is designed to help the team understand the core architecture of our project and explain it confidently to the professors.</p>
+
+        <h3>1. The Core Objective (The Introduction)</h3>
+        <p><strong>What we built:</strong> We developed a full-stack E-commerce platform.</p>
+        <p><strong>Our Primary Focus:</strong> Designing a robust, normalized Database Management System (DBMS) capable of handling real-world operations like users, products, carts, and complex financial transactions.</p>
+
+        <h3>2. The Database Architecture (The Most Important Part!)</h3>
+        <div class="highlight">
+            <strong>Note:</strong> Make sure to show the ER Diagram and the <code>ecommerce_database.sql</code> file while explaining this section!
+        </div>
+        <p><strong>Normalization & Entities:</strong></p>
+        <ul>
+            <li>We modeled the database using MariaDB/MySQL.</li>
+            <li>We designed 9 core entities (including <code>Customer</code>, <code>Product</code>, <code>Order</code>, <code>Review</code>, and <code>Payment</code>).</li>
+            <li>All tables are properly normalized with strict Primary and Foreign Key constraints to maintain data integrity and prevent orphaned records.</li>
+        </ul>
+        <p><strong>Advanced SQL Features Implemented:</strong></p>
+        <p>To guarantee a high grade, we didn't just build simple tables. We implemented advanced DBMS concepts:</p>
+        <ol>
+            <li><strong>Triggers:</strong> We implemented an <code>AFTER INSERT</code> trigger on the Payment table. This means the exact moment a payment goes through, the Product inventory (stock) is automatically reduced by the database itself.</li>
+            <li><strong>Stored Procedures:</strong> We encapsulated complex queries, such as <code>GetOrderHistory</code>, into Stored Procedures. This makes data retrieval highly secure and efficient on the backend.</li>
+            <li><strong>Views:</strong> We created database Views (like <code>Sales_By_Category</code>) to allow administrators to quickly generate revenue reports without writing complex JOINs every time.</li>
+        </ol>
+
+        <h3>3. The Frontend (The "Wow" Factor)</h3>
+        <div class="highlight">
+            <strong>Note:</strong> Keep the React app running (http://localhost:3000) and demonstrate clicking through it.
+        </div>
+        <p><strong>Why we built it:</strong> To prove that our backend schema supports a real, functioning application, we built a modern User Interface using React.js.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li><strong>Google OAuth Simulation:</strong> We implemented a smooth, secure-looking Google Sign-In flow for user authentication.</li>
+            <li><strong>Dynamic Catalog:</strong> The frontend dynamically renders product catalogs, handles category filtering, and manages the user's shopping cart before they proceed to checkout.</li>
+            <li><strong>Realistic Data:</strong> Our UI is populated with high-quality, realistic product images to give the platform a premium, professional feel.</li>
+        </ul>
+
+        <h3>4. Handling Difficult Professor Questions</h3>
+        
+        <div class="qa-box">
+            <div class="question">Q: Why is your React app currently using a mock JSON backend instead of directly querying the SQL database?</div>
+            <div class="answer"><strong>Answer:</strong> "We decoupled the frontend and backend to follow a modern microservices architecture pattern. We designed the complete SQL database and business logic on the backend, and used a mock JSON API on the frontend for rapid UI prototyping. Connecting the two via a Node.js REST API is the final step for a production deployment."</div>
+        </div>
+
+        <div class="qa-box">
+            <div class="question">Q: How do you handle a scenario where an item goes out of stock while in the cart?</div>
+            <div class="answer"><strong>Answer:</strong> "That's exactly why we use SQL Triggers and Transactions. When an order is placed, the database checks the current stock. If the payment succeeds, the Trigger automatically deducts the stock. If the stock is insufficient, the transaction rolls back."</div>
+        </div>
+
+        <h3 style="text-align: center; color: #27ae60; background-color: #e8f8f5; margin-top: 40px;">You are fully prepared to ace this presentation! Good luck!</h3>
+    </div>
+</body>
+</html>
